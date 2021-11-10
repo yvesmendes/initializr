@@ -35,7 +35,7 @@ class DependencyTests {
 		assertThat(dependency.getGroupId()).isEqualTo("com.example");
 		assertThat(dependency.getArtifactId()).isEqualTo("acme");
 		assertThat(dependency.getScope()).isNull();
-		assertThat(dependency.getVersion()).isNull();
+		assertThat(dependency.getVersion().getValue()).isNull();
 		assertThat(dependency.getClassifier()).isNull();
 		assertThat(dependency.getType()).isNull();
 		assertThat(dependency.getExclusions()).isEmpty();
@@ -60,7 +60,7 @@ class DependencyTests {
 		assertThat(dependency.getGroupId()).isEqualTo("com.example");
 		assertThat(dependency.getArtifactId()).isEqualTo("acme");
 		assertThat(dependency.getScope()).isNull();
-		assertThat(dependency.getVersion()).isNull();
+		assertThat(dependency.getVersion().getValue()).isNull();
 		assertThat(dependency.getClassifier()).isEqualTo("test");
 		assertThat(dependency.getType()).isNull();
 		assertThat(dependency.getExclusions()).isEmpty();
@@ -72,7 +72,7 @@ class DependencyTests {
 		assertThat(dependency.getGroupId()).isEqualTo("com.example");
 		assertThat(dependency.getArtifactId()).isEqualTo("acme");
 		assertThat(dependency.getScope()).isNull();
-		assertThat(dependency.getVersion()).isNull();
+		assertThat(dependency.getVersion().getValue()).isNull();
 		assertThat(dependency.getClassifier()).isNull();
 		assertThat(dependency.getType()).isEqualTo("test-zip");
 		assertThat(dependency.getExclusions()).isEmpty();
@@ -85,7 +85,7 @@ class DependencyTests {
 		assertThat(dependency.getGroupId()).isEqualTo("com.example");
 		assertThat(dependency.getArtifactId()).isEqualTo("acme");
 		assertThat(dependency.getScope()).isNull();
-		assertThat(dependency.getVersion()).isNull();
+		assertThat(dependency.getVersion().getValue()).isNull();
 		assertThat(dependency.getClassifier()).isNull();
 		assertThat(dependency.getType()).isNull();
 		assertThat(dependency.getExclusions()).containsExactly(new Exclusion("com.example", "exclude1"),

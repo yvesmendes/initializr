@@ -39,12 +39,12 @@ class KotlinDependenciesConfigurerTests {
 		Dependency kotlinStdlib = build.dependencies().get("kotlin-stdlib");
 		assertThat(kotlinStdlib.getGroupId()).isEqualTo("org.jetbrains.kotlin");
 		assertThat(kotlinStdlib.getArtifactId()).isEqualTo("kotlin-stdlib-jdk8");
-		assertThat(kotlinStdlib.getVersion()).isNull();
+		assertThat(kotlinStdlib.getVersion().getValue()).isNull();
 		assertThat(kotlinStdlib.getScope()).isEqualTo(DependencyScope.COMPILE);
 		Dependency kotlinReflect = build.dependencies().get("kotlin-reflect");
 		assertThat(kotlinReflect.getGroupId()).isEqualTo("org.jetbrains.kotlin");
 		assertThat(kotlinReflect.getArtifactId()).isEqualTo("kotlin-reflect");
-		assertThat(kotlinReflect.getVersion()).isNull();
+		assertThat(kotlinReflect.getVersion().getValue()).isNull();
 	}
 
 	@Test
@@ -55,12 +55,12 @@ class KotlinDependenciesConfigurerTests {
 		Dependency kotlinStdlib = build.dependencies().get("kotlin-stdlib");
 		assertThat(kotlinStdlib.getGroupId()).isEqualTo("org.jetbrains.kotlin");
 		assertThat(kotlinStdlib.getArtifactId()).isEqualTo("kotlin-stdlib-jdk8");
-		assertThat(kotlinStdlib.getVersion()).isNull();
+		assertThat(kotlinStdlib.getVersion().getValue()).isNull();
 		assertThat(kotlinStdlib.getScope()).isEqualTo(DependencyScope.COMPILE);
 		Dependency kotlinReflect = build.dependencies().get("kotlin-reflect");
 		assertThat(kotlinReflect.getGroupId()).isEqualTo("org.jetbrains.kotlin");
 		assertThat(kotlinReflect.getArtifactId()).isEqualTo("kotlin-reflect");
-		assertThat(kotlinReflect.getVersion()).isNull();
+		assertThat(kotlinReflect.getVersion().getValue()).isNull();
 	}
 
 }

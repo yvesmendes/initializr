@@ -52,7 +52,7 @@ class KotlinJpaMavenBuildCustomizerTests {
 			MavenPlugin.Dependency pluginDependency = plugin.getDependencies().get(0);
 			assertThat(pluginDependency.getGroupId()).isEqualTo("org.jetbrains.kotlin");
 			assertThat(pluginDependency.getArtifactId()).isEqualTo("kotlin-maven-noarg");
-			assertThat(pluginDependency.getVersion()).isEqualTo("${kotlin.version}");
+			assertThat(pluginDependency.getVersion().getValue()).isEqualTo("${kotlin.version}");
 		});
 	}
 

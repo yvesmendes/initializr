@@ -50,7 +50,7 @@ public class Dependency {
 	protected Dependency(Builder<?> builder) {
 		this.groupId = builder.groupId;
 		this.artifactId = builder.artifactId;
-		this.version = builder.version;
+		this.version = (builder.version == null) ? VersionReference.ofValue(null) : builder.version;
 		this.scope = builder.scope;
 		this.classifier = builder.classifier;
 		this.type = builder.type;

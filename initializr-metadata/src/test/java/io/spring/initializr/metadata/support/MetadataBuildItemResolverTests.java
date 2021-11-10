@@ -54,7 +54,7 @@ class MetadataBuildItemResolverTests {
 		io.spring.initializr.generator.buildsystem.Dependency dependency = resolver.resolveDependency("test-dep");
 		assertThat(dependency.getGroupId()).isEqualTo("com.example");
 		assertThat(dependency.getArtifactId()).isEqualTo("test");
-		assertThat(dependency.getVersion()).hasToString("1.0.0");
+		assertThat(dependency.getVersion().getValue()).hasToString("1.0.0");
 		assertThat(dependency.getClassifier()).hasToString("test-jar");
 		assertThat(dependency.getScope()).isEqualTo(DependencyScope.RUNTIME);
 	}
@@ -76,7 +76,7 @@ class MetadataBuildItemResolverTests {
 				.resolveDependency("test-dep");
 		assertThat(resolveDependency.getGroupId()).isEqualTo("com.example.override");
 		assertThat(resolveDependency.getArtifactId()).isEqualTo("test-override");
-		assertThat(resolveDependency.getVersion()).isNull();
+		assertThat(resolveDependency.getVersion().getValue()).isNull();
 		assertThat(resolveDependency.getScope()).isEqualTo(DependencyScope.COMPILE);
 	}
 

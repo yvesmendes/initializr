@@ -66,7 +66,7 @@ class MavenBuildTests {
 		assertThat(build.plugins().values()).singleElement().satisfies((testPlugin) -> {
 			assertThat(testPlugin.getGroupId()).isEqualTo("com.example");
 			assertThat(testPlugin.getArtifactId()).isEqualTo("test-plugin");
-			assertThat(testPlugin.getVersion()).isNull();
+			assertThat(testPlugin.getVersion().getValue()).isNull();
 			assertThat(testPlugin.getExecutions()).hasSize(1);
 			assertThat(testPlugin.getExecutions().get(0).getId()).isEqualTo("first");
 			assertThat(testPlugin.getExecutions().get(0).getGoals()).containsExactly("run-this");

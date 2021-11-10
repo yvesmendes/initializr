@@ -40,7 +40,7 @@ class DependencyContainerTests {
 		assertThat(web).isNotNull();
 		assertThat(web.getGroupId()).isEqualTo("org.springframework.boot");
 		assertThat(web.getArtifactId()).isEqualTo("spring-boot-starter-web");
-		assertThat(web.getVersion()).isNull();
+		assertThat(web.getVersion().getValue()).isNull();
 		assertThat(web.getScope()).isEqualTo(DependencyScope.COMPILE);
 	}
 

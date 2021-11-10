@@ -594,7 +594,8 @@ class MavenBuildWriterTests {
 		MavenBuild build = new MavenBuild();
 		build.settings().coordinates("com.example.demo", "demo");
 		build.plugins().add("org.jetbrains.kotlin", "kotlin-maven-plugin",
-				(plugin) -> plugin.dependency("org.jetbrains.kotlin", "kotlin-maven-allopen", "${kotlin.version}"));
+				(plugin) -> plugin.dependency("org.jetbrains.kotlin", "kotlin-maven-allopen",
+						VersionReference.ofValue("${kotlin.version}")));
 		generatePom(build, (pom) -> {
 			NodeAssert plugin = pom.nodeAtPath("/project/build/plugins/plugin");
 			assertThat(plugin).textAtPath("groupId").isEqualTo("org.jetbrains.kotlin");

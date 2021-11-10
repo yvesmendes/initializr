@@ -36,7 +36,7 @@ public class MavenPluginContainerTests {
 		assertThat(pluginContainer.values()).singleElement().satisfies((plugin) -> {
 			assertThat(plugin.getGroupId()).isEqualTo("com.example");
 			assertThat(plugin.getArtifactId()).isEqualTo("test-plugin");
-			assertThat(plugin.getVersion()).isNull();
+			assertThat(plugin.getVersion().getValue()).isNull();
 		});
 	}
 

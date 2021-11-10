@@ -51,7 +51,8 @@ class KotlinMavenFullBuildCustomizer implements BuildCustomizer<MavenBuild> {
 			kotlinMavenPlugin.execution("compile", (compile) -> compile.phase("compile").goal("compile"));
 			kotlinMavenPlugin.execution("test-compile",
 					(compile) -> compile.phase("test-compile").goal("test-compile"));
-			kotlinMavenPlugin.dependency("org.jetbrains.kotlin", "kotlin-maven-allopen", "${kotlin.version}");
+			kotlinMavenPlugin.dependency("org.jetbrains.kotlin", "kotlin-maven-allopen",
+					VersionReference.ofValue("${kotlin.version}"));
 		});
 
 	}

@@ -51,7 +51,7 @@ public class MavenPlugin {
 	protected MavenPlugin(Builder builder) {
 		this.groupId = builder.groupId;
 		this.artifactId = builder.artifactId;
-		this.version = builder.version;
+		this.version = (builder.version == null) ? VersionReference.ofValue(null) : builder.version;
 		this.extensions = builder.extensions;
 		this.executions = Collections.unmodifiableList(
 				builder.executions.values().stream().map(ExecutionBuilder::build).collect(Collectors.toList()));
@@ -194,7 +194,7 @@ public class MavenPlugin {
 		 * @param version the version of the dependency
 		 * @return this for method chaining
 		 */
-		public Builder dependency(String groupId, String artifactId, String version) {
+		public Builder dependency(String groupId, String artifactId, VersionReference version) {
 			this.dependencies.add(new Dependency(groupId, artifactId, version));
 			return this;
 		}
@@ -464,9 +464,9 @@ public class MavenPlugin {
 
 		private final String artifactId;
 
-		private final String version;
+		private final VersionReference version;
 
-		private Dependency(String groupId, String artifactId, String version) {
+		private Dependency(String groupId, String artifactId, VersionReference version) {
 			this.groupId = groupId;
 			this.artifactId = artifactId;
 			this.version = version;
@@ -492,7 +492,7 @@ public class MavenPlugin {
 		 * Return the version of the plugin dependency.
 		 * @return the version
 		 */
-		public String getVersion() {
+		public VersionReference getVersion() {
 			return this.version;
 		}
 
